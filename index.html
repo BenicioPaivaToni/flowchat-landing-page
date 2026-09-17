@@ -45,16 +45,6 @@
             <!-- Logo FlowChat -->
             <a href="#" class="flex items-center gap-3 group">
                 <img src="logo.png" alt="FlowChat" class="h-24 md:h-[120px] w-auto object-contain transition group-hover:opacity-90" onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-fallback').classList.remove('hidden');">
-2. No Rodapé (Footer)
-Procure a tag <img> da logo no rodapé:
-
-<!-- ANTES -->
-<img src="logo.png" alt="FlowChat" class="h-12 md:h-14 ...">
-Substitua por:
-
-<!-- DEPOIS (+50% maior: 72px no mobile / 84px no desktop) -->
-<img src="logo.png" alt="FlowChat" class="h-16 md:h-20 w-auto object-contain" onerror="this.onerror=null; this.classList.add('hidden');">
-Com essas medidas (h-24 md:h-[120px]), a logo agora ganha destaque visual imediato logo no primeiro segundo em que o visitante abre a página.
                 <!-- Fallback caso a imagem logo.png ainda não esteja na pasta -->
                 <div id="logo-fallback" class="hidden flex items-center gap-2">
                     <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">FC</div>
