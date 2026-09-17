@@ -37,22 +37,24 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
-
-    <!-- BARRA DE AVISO / STATUS -->
-    <div class="bg-gradient-to-r from-blue-900 via-slate-900 to-emerald-950 border-b border-slate-800 text-xs py-2 px-4 text-center text-slate-300">
-        <span class="inline-flex items-center gap-1.5 font-medium">
-            <span class="w-2 h-2 rounded-full bg-wa animate-ping"></span>
-            Novidade: Atendimento VoIP para chamadas de áudio WhatsApp sem necessidade de softphone ou PABX físico.
-        </span>
-    </div>
-
+    
     <!-- NAVBAR -->
     <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-28 flex items-center justify-between">
             
             <!-- Logo FlowChat -->
             <a href="#" class="flex items-center gap-3 group">
-                <img src="logo.png" alt="FlowChat" class="h-16 md:h-20 w-auto object-contain transition group-hover:opacity-90" onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-fallback').classList.remove('hidden');">
+                <img src="logo.png" alt="FlowChat" class="h-24 md:h-[120px] w-auto object-contain transition group-hover:opacity-90" onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-fallback').classList.remove('hidden');">
+2. No Rodapé (Footer)
+Procure a tag <img> da logo no rodapé:
+
+<!-- ANTES -->
+<img src="logo.png" alt="FlowChat" class="h-12 md:h-14 ...">
+Substitua por:
+
+<!-- DEPOIS (+50% maior: 72px no mobile / 84px no desktop) -->
+<img src="logo.png" alt="FlowChat" class="h-16 md:h-20 w-auto object-contain" onerror="this.onerror=null; this.classList.add('hidden');">
+Com essas medidas (h-24 md:h-[120px]), a logo agora ganha destaque visual imediato logo no primeiro segundo em que o visitante abre a página.
                 <!-- Fallback caso a imagem logo.png ainda não esteja na pasta -->
                 <div id="logo-fallback" class="hidden flex items-center gap-2">
                     <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">FC</div>
@@ -277,10 +279,11 @@
 
     <!-- FOOTER -->
     <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-sm text-slate-400">
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             
             <div class="flex items-center gap-4">
-                <img src="logo.png" alt="FlowChat" class="h-8 w-auto object-contain" onerror="this.onerror=null; this.classList.add('hidden');">
+                <img src="logo.png" alt="FlowChat" class="h-16 md:h-20 w-auto object-contain" onerror="this.onerror=null; this.classList.add('hidden');">
                 <span class="text-xs text-slate-500">© 2025 FlowChat Tecnologia Ltda. Todos os direitos reservados.</span>
             </div>
 
