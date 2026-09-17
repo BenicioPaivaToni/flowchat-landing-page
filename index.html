@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowChat - Plataforma Unificada de Chat e Voz WhatsApp</title>
+    
+    <!-- Meta Tags SEO & Open Graph -->
+    <meta name="description" content="Atenda mensagens de texto e chamadas de voz do WhatsApp em uma única plataforma omnichannel. Múltiplos atendentes, gravação em nuvem e API oficial.">
+    <meta property="og:title" content="FlowChat - Chat e Voz WhatsApp em um só lugar">
+    <meta property="og:description" content="Centralize seu time: atenda chamadas de voz e conversas de texto do WhatsApp diretamente pelo navegador.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1351B4',
+                            cyan: '#0284C7',
+                            dark: '#0B132B'
+                        },
+                        wa: {
+                            DEFAULT: '#25D366',
+                            dark: '#128C7E'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- BARRA DE AVISO / STATUS -->
+    <div class="bg-gradient-to-r from-blue-900 via-slate-900 to-emerald-950 border-b border-slate-800 text-xs py-2 px-4 text-center text-slate-300">
+        <span class="inline-flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-wa animate-ping"></span>
+            Novidade: Atendimento VoIP para chamadas de áudio WhatsApp sem necessidade de softphone ou PABX físico.
+        </span>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo FlowChat -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="FlowChat" class="h-10 w-auto object-contain transition group-hover:opacity-90" onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-fallback').classList.remove('hidden');">
+                
+                <!-- Fallback caso a imagem logo.png ainda não esteja na pasta -->
+                <div id="logo-fallback" class="hidden flex items-center gap-2">
+                    <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">FC</div>
+                    <span class="text-2xl font-bold tracking-tight text-white">Flow<span class="text-cyan-400">Chat</span></span>
+                </div>
+            </a>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#recursos" class="hover:text-cyan-400 transition">Recursos</a>
+                <a href="#voz" class="hover:text-cyan-400 transition">Tecnologia de Voz</a>
+                <a href="#arquitetura" class="hover:text-cyan-400 transition">API & Integrações</a>
+                <a href="#planos" class="hover:text-cyan-400 transition">Planos</a>
+            </nav>
+
+            <!-- Ações -->
+            <div class="flex items-center gap-4">
+                <a href="#demonstracao" class="hidden sm:inline-block text-sm font-semibold text-slate-300 hover:text-white transition">Entrar</a>
+                <a href="#demonstracao" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                    <span>Agendar Demo</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
+        <!-- Luz de fundo decorativa -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/20 blur-[140px] pointer-events-none rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-wa"></i>
+                        Voz WebRTC + Mensageria WhatsApp Oficial
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        Atenda <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">mensagens</span> e <span class="text-transparent bg-clip-text bg-gradient-to-r from-wa to-emerald-400">chamadas de voz</span> no mesmo painel.
+                    </h1>
+                    
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Pare de perder clientes que ligam no WhatsApp corporativo. O FlowChat permite que sua equipe atenda chamadas de voz e responda conversas na mesma interface web, com fila, gravação e métricas completas.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#demonstracao" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-center transition flex items-center justify-center gap-2 shadow-xl shadow-blue-600/25">
+                            <span>Testar Gratuitamente</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#voz" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-center transition flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-4 h-4 text-cyan-400"></i>
+                            <span>Como funciona a Voz</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-xs text-slate-400 text-center lg:text-left">
+                        <div>
+                            <p class="text-lg font-bold text-white">99.98%</p>
+                            <p>SLA de Disponibilidade</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-white">&lt; 150ms</p>
+                            <p>Latência de Áudio</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-white">100% LGPD</p>
+                            <p>Criptografia Ponta a Ponta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOCKUP DO PAINEL FLOWCHAT -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md bg-slate-950 rounded-2xl shadow-2xl border border-slate-800 overflow-hidden">
+                        
+                        <!-- Barra de Janela -->
+                        <div class="bg-slate-900/90 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono flex items-center gap-1">
+                                <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i> app.flowchat.io
+                            </span>
+                        </div>
+
+                        <!-- Card de Chamada Entrante -->
+                        <div class="p-4 bg-emerald-950/40 border-b border-emerald-800/40 flex items-center justify-between animate-pulse">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-full bg-wa flex items-center justify-center text-slate-950 font-bold shadow-lg shadow-wa/20">
+                                    <i data-lucide="phone-incoming" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-emerald-400 tracking-wide uppercase">Chamada de Voz WhatsApp</p>
+                                    <p class="text-sm font-bold text-white">+55 (11) 98765-4321</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button title="Atender" class="p-2.5 bg-wa hover:bg-emerald-400 text-slate-950 rounded-lg font-bold transition">
+                                    <i data-lucide="phone" class="w-4 h-4"></i>
+                                </button>
+                                <button title="Recusar" class="p-2.5 bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition">
+                                    <i data-lucide="phone-off" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Área de Chat -->
+                        <div class="p-5 space-y-4 text-xs font-normal">
+                            <div class="flex flex-col items-start space-y-1">
+                                <span class="text-[10px] text-slate-500">Cliente • 14:32</span>
+                                <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] border border-slate-700/60">
+                                    Vocês conseguem me atender por ligação também? Preciso tirar uma dúvida urgente sobre meu pedido.
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col items-end space-y-1">
+                                <span class="text-[10px] text-slate-500">FlowChat Bot • 14:32</span>
+                                <div class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-sm max-w-[85%] shadow-md">
+                                    Sim! Pode ligar diretamente por este WhatsApp. Nosso atendente já está pronto na linha.
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between text-slate-400 text-xs">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="mic" class="w-4 h-4 text-cyan-400"></i>
+                                    Gravação de chamada ativada (02:14)
+                                </span>
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            </div>
+
+                            <!-- Input Simulado -->
+                            <div class="pt-2 flex items-center gap-2">
+                                <input type="text" placeholder="Digite uma resposta..." disabled class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-slate-500 cursor-not-allowed">
+                                <button class="p-2 bg-blue-600 text-white rounded-lg"><i data-lucide="send" class="w-4 h-4"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RECURSOS / DIFERENCIAIS -->
+    <section id="recursos" class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">Por que a FlowChat?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">A ponte definitiva entre mensageria ágil e contato de voz humanizado</h3>
+                <p class="text-slate-400 mt-4">Chega de dizer ao seu cliente "esse número não recebe ligações". Transforme atrito em conversão imediata.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center mb-6">
+                        <i data-lucide="phone-call" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Recepção de Voz no Navegador</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Atenda chamadas diretas de áudio do WhatsApp com apenas um fone de ouvido. Elimine custos de PABX e telefonia 0800 tradicional.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-blue-950 text-blue-400 flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Multi-atendentes em 1 Número</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Distribuição automática por departamentos (Vendas, Suporte, Financeiro). Transfira chats e ligações em andamento com 1 clique.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-wa/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-950 text-wa flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">API Oficial da Meta</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sem hacks ou emuladores piratas. Sua empresa opera com estabilidade corporativa garantida e risco zero de bloqueio de número.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DEMO / FORMULÁRIO -->
+    <section id="demonstracao" class="py-20 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950 border border-blue-800 text-cyan-400 text-xs font-semibold uppercase mb-4">
+                Comece em 5 minutos
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                Pronto para experimentar o FlowChat?
+            </h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto text-sm sm:text-base">
+                Solicite acesso antecipado e descubra como unificar texto e voz no WhatsApp de forma produtiva para o seu time comercial e suporte.
+            </p>
+
+            <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); alert('Obrigado pelo interesse no FlowChat! Entraremos em contato para liberar seu acesso de testes.');">
+                <input type="text" placeholder="Seu nome completo" required class="w-full px-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
+                <input type="email" placeholder="Seu e-mail corporativo" required class="w-full px-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
+                <input type="tel" placeholder="WhatsApp comercial (+55 ...)" required class="w-full px-4 py-3.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm tracking-wide transition shadow-lg shadow-blue-600/30">
+                    Solicitar Demonstração Gratuita
+                </button>
+            </form>
+            <p class="text-xs text-slate-500 mt-4">Sem necessidade de cartão de crédito. Instalação guiada por nosso time técnico.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-sm text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="FlowChat" class="h-8 w-auto object-contain" onerror="this.onerror=null; this.classList.add('hidden');">
+                <span class="text-xs text-slate-500">© 2025 FlowChat Tecnologia Ltda. Todos os direitos reservados.</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs">
+                <a href="#" class="hover:text-cyan-400 transition">Termos de Uso</a>
+                <a href="#" class="hover:text-cyan-400 transition">Privacidade & LGPD</a>
+                <a href="#" class="hover:text-cyan-400 transition">Status do Servidor</a>
+                <a href="#" class="hover:text-cyan-400 transition">Suporte</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Renderiza Ícones SVG do Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
